@@ -21,6 +21,9 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
     @IBOutlet private weak var descriptionTV: UITextView!
     @IBOutlet private weak var notifySwitch: UISwitch!
     @IBOutlet private weak var notifyTime: UIDatePicker!
+    @IBOutlet private weak var daysLabel: UILabel!
+    @IBOutlet private weak var notifyLabel: UILabel!
+    @IBOutlet private weak var saveButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -32,9 +35,7 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
                                          action: #selector(self.presentMenu))
         self.navigationItem.setRightBarButton(menuToggle, animated: true)
         setDescTextColor()
-        self.view.backgroundColor = .clear
-        notifySwitch.tintColor = .htMutedGreen
-        notifySwitch.onTintColor = .htMutedGreen
+        
         pickerView.dataSource = self
         pickerView.delegate = self
         descriptionTV.delegate = self
@@ -67,6 +68,25 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
     // MARK: - Private Methods
     
     private func updateViews() {
+        daysLabel.textColor = .htTextColor
+        notifyLabel.textColor = .htTextColor
+        pickerView.backgroundColor = .htDarkPurple
+        pickerView.tintColor = .htTextColor
+        pickerView.layer.cornerRadius = 12
+        notifyTime.backgroundColor = .htDarkPurple
+        notifyTime.tintColor = .htTextColor
+        notifyTime.setValue(UIColor.htTextColor, forKey: "textColor")
+        notifyTime.layer.cornerRadius = 12
+        habitNameTF.backgroundColor = .htDarkPurple
+        habitNameTF.textColor = .htTextColor
+        descriptionTV.backgroundColor = .htDarkPurple
+        descriptionTV.textColor = .htTextColor
+        self.view.backgroundColor = .clear
+        notifySwitch.tintColor = .htMutedGreen
+        notifySwitch.onTintColor = .htMutedGreen
+        saveButton.backgroundColor = .htDarkPurple
+        saveButton.layer.cornerRadius = 12
+        saveButton.titleLabel?.textColor = .htTextColor
         setTextViewBorder(for: descriptionTV)
         if let habit = habit {
             title = "Editing: \(habit.title ?? "")"
@@ -130,6 +150,11 @@ extension HabitDetailViewController: UIPickerViewDataSource, UIPickerViewDelegat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+
+        let string = pickerData[row]
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.htTextColor])
     }
     
 //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
