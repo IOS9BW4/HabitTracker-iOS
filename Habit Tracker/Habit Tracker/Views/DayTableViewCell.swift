@@ -28,6 +28,10 @@ class DayTableViewCell: UITableViewCell {
     // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.backgroundColor = UIColor.htDarkPurple.withAlphaComponent(0.66)
+        self.contentView.tintColor = .htLightYellow
+        self.textLabel?.textColor = .htLightYellow
+        
         // Initialization code
     }
 
@@ -61,16 +65,21 @@ class DayTableViewCell: UITableViewCell {
         habitName.text = day.habit?.title
         habitDate.text = day.date?.formatted()
         let dayStatus = DayStatus(rawValue: day.status)
+        textLabel?.tintColor = .htLightYellow
+        textLabel?.textColor = .htLightYellow
+        detailTextLabel?.tintColor = .htLightYellow
+        yesButton.tintColor = .htLightYellow
+        noButton.tintColor = .htLightYellow
         switch dayStatus {
         case .no:
             noButton.backgroundColor = .systemBlue
-            yesButton.backgroundColor = .green
+            yesButton.backgroundColor = .htMutedGreen
         case .yes:
-            noButton.backgroundColor = .red
+            noButton.backgroundColor = .htMutedRed
             yesButton.backgroundColor = .systemBlue
         case .unset:
-            yesButton.backgroundColor = .green
-            noButton.backgroundColor = .red
+            yesButton.backgroundColor = .htMutedGreen
+            noButton.backgroundColor = .htMutedRed
         case .none:
             break
         }

@@ -29,7 +29,7 @@ class HabitsTableViewController: UITableViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .htBackground
         tableView.accessibilityIdentifier = "MyHabitsTableView"
     }
     
@@ -52,6 +52,8 @@ class HabitsTableViewController: UITableViewController {
         cell.accessibilityIdentifier = "HabitCell\(indexPath.row)"
         let habit = frc.object(at: indexPath)
         cell.textLabel?.text = habit.title
+        cell.layer.cornerRadius = 25
+        cell.backgroundColor = .htDarkPurple
         return cell
     }
 
