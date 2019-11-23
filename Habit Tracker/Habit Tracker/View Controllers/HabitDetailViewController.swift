@@ -32,6 +32,7 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
                                          action: #selector(self.presentMenu))
         self.navigationItem.setRightBarButton(menuToggle, animated: true)
         setDescTextColor()
+        self.view.backgroundColor = .clear
         notifySwitch.tintColor = .htMutedGreen
         notifySwitch.onTintColor = .htMutedGreen
         pickerView.dataSource = self

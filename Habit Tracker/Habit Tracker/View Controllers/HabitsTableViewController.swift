@@ -48,12 +48,11 @@ class HabitsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath) as?
+            HabitTableViewCell else { return UITableViewCell() }
         cell.accessibilityIdentifier = "HabitCell\(indexPath.row)"
         let habit = frc.object(at: indexPath)
-        cell.textLabel?.text = habit.title
-        cell.layer.cornerRadius = 25
-        cell.backgroundColor = .htDarkPurple
+        cell.habit = habit
         return cell
     }
 

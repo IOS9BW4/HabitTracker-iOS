@@ -50,8 +50,7 @@ class DaysTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DaysCell", for: indexPath) as? DayTableViewCell else { return UITableViewCell() }
         cell.day = frc.object(at: indexPath)
-        cell.layer.cornerRadius = 25
-        cell.backgroundColor = .htDarkPurple
+        //cell.layer.cornerRadius = 25
         return cell
     }
 }

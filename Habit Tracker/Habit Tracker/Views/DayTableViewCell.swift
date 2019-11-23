@@ -23,15 +23,13 @@ class DayTableViewCell: UITableViewCell {
     @IBOutlet private weak var habitDate: UILabel!
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
+    @IBOutlet private weak var innerView: UIView!
     
     
     // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor = UIColor.htDarkPurple.withAlphaComponent(0.66)
-        self.contentView.tintColor = .htLightYellow
-        self.textLabel?.textColor = .htLightYellow
-        
+        updateViews()
         // Initialization code
     }
 
@@ -62,12 +60,29 @@ class DayTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     private func updateViews() {
         guard let day = day else { return }
+        //Text Font and Color
+        backgroundColor = .clear
+        
+        frame.size.height = CGFloat(120)
+        habitName.font = .habitTableText
+        habitName.textColor = .htTextColor
         habitName.text = day.habit?.title
+        habitDate.textColor = .htTextColor
         habitDate.text = day.date?.formatted()
+        setupInnerView()
+        setupButtons()
+    }
+    
+    private func setupInnerView () {
+        innerView.backgroundColor = .htDarkPurple
+        innerView.layer.cornerRadius = .htCellCornerRadius
+    }
+    
+    private func setupButtons() {
+        guard let day = day else { return }
+        yesButton.layer.cornerRadius = .htYesNoButtonCornerRadius
+        noButton.layer.cornerRadius = .htYesNoButtonCornerRadius
         let dayStatus = DayStatus(rawValue: day.status)
-        textLabel?.tintColor = .htLightYellow
-        textLabel?.textColor = .htLightYellow
-        detailTextLabel?.tintColor = .htLightYellow
         yesButton.tintColor = .htLightYellow
         noButton.tintColor = .htLightYellow
         switch dayStatus {
@@ -84,5 +99,4 @@ class DayTableViewCell: UITableViewCell {
             break
         }
     }
-
 }

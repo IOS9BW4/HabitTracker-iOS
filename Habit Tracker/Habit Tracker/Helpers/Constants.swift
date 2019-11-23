@@ -26,7 +26,7 @@ extension UIColor {
     static let htMutedRed = UIColor(red: 125.0/255.0, green: 0.0/255.0, blue: 13.0/255.0, alpha: 1.0)
     //Assignments:
     static let htBackground = UIColor.clear
-    static let htTextColot = UIColor.htLightYellow
+    static let htTextColor = UIColor.htLightYellow
     //static let htTextColor = UIColor(red: 254.0 / 255.0, green: 220.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
     static let htCalenderCell = UIColor.htDarkPurple
     //static let htCalenderCell = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.00)
@@ -46,4 +46,14 @@ extension UIColor {
     }()
 }
 
-//let cornerRadius:CGFloat        = 10
+extension CGFloat {
+    //let cornerRadius:CGFloat        = 10
+    static let htCellCornerRadius = CGFloat(20)
+    static let htYesNoButtonCornerRadius = CGFloat(12)
+    static let htHabitTableCellHeight = CGFloat(100)
+    static let htHabitTableTextSize = CGFloat(30)
+}
+
+extension UIFont {
+    static let habitTableText = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .largeTitle), size: .htHabitTableTextSize)
+}
