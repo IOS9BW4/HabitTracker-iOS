@@ -87,6 +87,8 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
         saveButton.backgroundColor = .htDarkPurple
         saveButton.layer.cornerRadius = 12
         saveButton.titleLabel?.textColor = .htTextColor
+        saveButton.tintColor = .htTextColor
+        setTextViewBorder(for: habitNameTF)
         setTextViewBorder(for: descriptionTV)
         if let habit = habit {
             title = "Editing: \(habit.title ?? "")"
@@ -113,10 +115,10 @@ class HabitDetailViewController: UIViewController, HabitHandlerProtocol {
         }
     }
     
-    private func setTextViewBorder(for textView: UITextView) {
-        textView.layer.borderWidth = 0.5
-        textView.layer.borderColor = UIColor.lightGray.cgColor
-        textView.layer.cornerRadius = 8
+    private func setTextViewBorder(for view: UIView) {
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.cornerRadius = 8
     }
     
     @objc
