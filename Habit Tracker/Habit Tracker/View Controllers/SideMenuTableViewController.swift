@@ -11,6 +11,13 @@ import UIKit
 class SideMenuTableViewController: UITableViewController, HabitHandlerProtocol {
     
     var habit: Habit?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clear
+        
+        updateViews()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CalendarShowSegue" {
@@ -20,5 +27,11 @@ class SideMenuTableViewController: UITableViewController, HabitHandlerProtocol {
             guard let detailVC = segue.destination as? PieChartViewController else { return }
             detailVC.habit = habit
         }
+    }
+    
+    private func updateViews() {
+        tableView.backgroundColor = .htDarkPurple
+        tableView.tintColor = .htTextColor
+        //tableView.ro
     }
 }
