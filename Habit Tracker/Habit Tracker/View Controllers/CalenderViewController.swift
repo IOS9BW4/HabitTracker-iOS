@@ -23,7 +23,7 @@ class CalenderViewController: UIViewController, HabitHandlerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .clear
         habitMonthView.layer.borderColor = UIColor.borderColor.cgColor
         habitMonthView.layer.borderWidth = 2
         habitMonthView.layer.cornerRadius = 6

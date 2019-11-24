@@ -23,11 +23,13 @@ class DayTableViewCell: UITableViewCell {
     @IBOutlet private weak var habitDate: UILabel!
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
+    @IBOutlet private weak var innerView: UIView!
     
     
     // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        updateViews()
         // Initialization code
     }
 
@@ -58,22 +60,43 @@ class DayTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     private func updateViews() {
         guard let day = day else { return }
+        //Text Font and Color
+        backgroundColor = .clear
+        
+        frame.size.height = CGFloat(120)
+        habitName.font = .habitTableText
+        habitName.textColor = .htTextColor
         habitName.text = day.habit?.title
+        habitDate.textColor = .htTextColor
         habitDate.text = day.date?.formatted()
+        setupInnerView()
+        setupButtons()
+    }
+    
+    private func setupInnerView () {
+        innerView.backgroundColor = .htDarkPurple
+        innerView.layer.cornerRadius = .htCellCornerRadius
+    }
+    
+    private func setupButtons() {
+        guard let day = day else { return }
+        yesButton.layer.cornerRadius = .htYesNoButtonCornerRadius
+        noButton.layer.cornerRadius = .htYesNoButtonCornerRadius
         let dayStatus = DayStatus(rawValue: day.status)
+        yesButton.tintColor = .htLightYellow
+        noButton.tintColor = .htLightYellow
         switch dayStatus {
         case .no:
             noButton.backgroundColor = .systemBlue
-            yesButton.backgroundColor = .green
+            yesButton.backgroundColor = .htMutedGreen
         case .yes:
-            noButton.backgroundColor = .red
+            noButton.backgroundColor = .htMutedRed
             yesButton.backgroundColor = .systemBlue
         case .unset:
-            yesButton.backgroundColor = .green
-            noButton.backgroundColor = .red
+            yesButton.backgroundColor = .htMutedGreen
+            noButton.backgroundColor = .htMutedRed
         case .none:
             break
         }
     }
-
 }

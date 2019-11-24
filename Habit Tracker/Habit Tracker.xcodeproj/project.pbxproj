@@ -30,6 +30,7 @@
 		FB14DCD4237F66C600ED67E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB14DCD2237F66C600ED67E2 /* LaunchScreen.storyboard */; };
 		FB14DCDF237F66C600ED67E2 /* Habit_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB14DCDE237F66C600ED67E2 /* Habit_TrackerTests.swift */; };
 		FB14DCEA237F66C700ED67E2 /* Habit_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB14DCE9237F66C700ED67E2 /* Habit_TrackerUITests.swift */; };
+		FBA640502389C7DB0003082A /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6404F2389C7DB0003082A /* HabitTableViewCell.swift */; };
 		FBEE1C092383321700F22C57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE1C082383321700F22C57 /* Constants.swift */; };
 		FBEE1C0B2383322D00F22C57 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE1C0A2383322D00F22C57 /* CoreDataStack.swift */; };
 		FBEE1C0D238332FB00F22C57 /* HabitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE1C0C238332FB00F22C57 /* HabitController.swift */; };
@@ -149,6 +150,7 @@
 		FB14DCE5237F66C700ED67E2 /* Habit TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Habit TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB14DCE9237F66C700ED67E2 /* Habit_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_TrackerUITests.swift; sourceTree = "<group>"; };
 		FB14DCEB237F66C700ED67E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBA6404F2389C7DB0003082A /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		FBEE1C082383321700F22C57 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBEE1C0A2383322D00F22C57 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FBEE1C0C238332FB00F22C57 /* HabitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				0E2472A02383442900791524 /* DateCell.swift */,
 				0E2472AE238462A000791524 /* DateHeader.swift */,
 				FBEE1C672384A20500F22C57 /* DayTableViewCell.swift */,
+				FBA6404F2389C7DB0003082A /* HabitTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				FBEE1C0B2383322D00F22C57 /* CoreDataStack.swift in Sources */,
 				0E2472A12383442900791524 /* DateCell.swift in Sources */,
 				FB14DCC5237F66C000ED67E2 /* AppDelegate.swift in Sources */,
+				FBA640502389C7DB0003082A /* HabitTableViewCell.swift in Sources */,
 				FBEE1C5E238360CD00F22C57 /* HabitHandlerProtocol.swift in Sources */,
 				FBEE1C5A23835A0A00F22C57 /* HabitDetailTabBarController.swift in Sources */,
 				FBEE1C602383782200F22C57 /* Date+Extension.swift in Sources */,

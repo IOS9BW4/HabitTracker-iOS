@@ -20,6 +20,7 @@ class PieChartViewController: UIViewController, HabitHandlerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .clear
         updateViews()
     }
     
@@ -29,6 +30,7 @@ class PieChartViewController: UIViewController, HabitHandlerProtocol {
     }
     
     func updateViews() {
+        habitsPieChart.backgroundColor = .clear
         habitsPieChart.clear()
         
         completeColorView.backgroundColor = .htCalendarYes
@@ -55,9 +57,11 @@ class PieChartViewController: UIViewController, HabitHandlerProtocol {
         
         habitsPieChart.models = [completeValue, incompleteValue, unchecked]
         
-        let textLayerSettings = PieLineTextLayerSettings()
-        textLayerSettings.label.font = UIFont.boldSystemFont(ofSize: 16)
-        textLayerSettings.label.textColor = UIColor.borderColor
+        var textLayerSettings = PieLineTextLayerSettings()
+        textLayerSettings.label.font = UIFont.boldSystemFont(ofSize: 24)
+        textLayerSettings.label.textColor = UIColor.htTextColor
+        textLayerSettings.lineColor = UIColor.htTextColor
+        textLayerSettings.label.bgColor = .htDarkPurple
 
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
