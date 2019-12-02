@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,19 +104,19 @@
                                             <rect key="frame" x="20" y="10" width="374" height="72"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1d5-Cd-Wzm">
-                                                    <rect key="frame" x="20" y="0.0" width="344" height="72"/>
+                                                    <rect key="frame" x="20" y="0.0" width="344" height="64"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4NR-b5-Njf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="72"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4NR-b5-Njf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="64"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BE-br-wPb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="51.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="35.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nku-8w-Bev">
-                                                                    <rect key="frame" x="0.0" y="51.5" width="36" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="43.5" width="36" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20.5" id="t9Z-pr-LHG"/>
                                                                     </constraints>
@@ -126,10 +127,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Bc-Wa-6MA">
-                                                            <rect key="frame" x="236" y="0.0" width="108" height="72"/>
+                                                            <rect key="frame" x="236" y="0.0" width="108" height="64"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEy-4p-JwD">
-                                                                    <rect key="frame" x="0.0" y="21" width="50" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="17" width="50" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="wfr-SQ-NJ9"/>
                                                                     </constraints>
@@ -139,7 +140,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8o-3f-phh">
-                                                                    <rect key="frame" x="58" y="21" width="50" height="30"/>
+                                                                    <rect key="frame" x="58" y="17" width="50" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="HLM-WX-u7N"/>
                                                                     </constraints>
@@ -151,13 +152,16 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1Bc-Wa-6MA" firstAttribute="leading" secondItem="4NR-b5-Njf" secondAttribute="trailing" constant="8" id="2Qo-Zx-eZZ"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="1d5-Cd-Wzm" secondAttribute="trailing" constant="10" id="Ctm-4p-7M1"/>
                                                 <constraint firstItem="1d5-Cd-Wzm" firstAttribute="top" secondItem="wO3-V9-UcU" secondAttribute="top" id="K1h-uE-mhr"/>
-                                                <constraint firstAttribute="bottom" secondItem="1d5-Cd-Wzm" secondAttribute="bottom" id="bIP-YV-IL8"/>
+                                                <constraint firstAttribute="bottom" secondItem="1d5-Cd-Wzm" secondAttribute="bottom" constant="8" id="bIP-YV-IL8"/>
                                                 <constraint firstItem="1d5-Cd-Wzm" firstAttribute="leading" secondItem="wO3-V9-UcU" secondAttribute="leading" constant="20" id="p7g-0T-c18"/>
                                             </constraints>
                                         </view>
