@@ -30,6 +30,7 @@ class DaysTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .htBackground
+        tableView.separatorColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {

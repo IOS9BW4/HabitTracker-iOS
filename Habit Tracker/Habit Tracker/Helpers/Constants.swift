@@ -25,7 +25,7 @@ extension UIColor {
     static let htMutedGreen = UIColor(red: 18.0/255.0, green: 135.0/255.0, blue: 5.0/255.0, alpha: 1.0)
     static let htMutedRed = UIColor(red: 125.0/255.0, green: 0.0/255.0, blue: 13.0/255.0, alpha: 1.0)
     //Assignments:
-    static let htBackground = UIColor.clear
+    static let htBackground = UIColor.clear.withAlphaComponent(0)
     static let htTextColor = UIColor.htLightYellow
     //static let htTextColor = UIColor(red: 254.0 / 255.0, green: 220.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
     static let htCalenderCell = UIColor.htDarkPurple
