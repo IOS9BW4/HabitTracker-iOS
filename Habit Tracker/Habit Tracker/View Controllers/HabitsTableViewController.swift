@@ -30,6 +30,7 @@ class HabitsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .htBackground
+        self.tableView.separatorColor = .clear
         tableView.accessibilityIdentifier = "MyHabitsTableView"
     }
     
